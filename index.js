@@ -25,6 +25,18 @@ newImage('assets/crate.png', '150', '200');
 //assets/well.png (500px from the left, 425px from the bottom)
 newImage('assets/well.png', '500', '425');
 
+let sword = document.createElement('img')
+sword.src = 'assets/sword.png'
+sword.position = 'fixed'
+sword.left = '500px'
+sword.bottom = '405px'
+document.body.append(sword)
+
+sword.addEventListener('click', function(){
+    sword.remove()
+})
+
+
 
 
 
