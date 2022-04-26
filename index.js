@@ -29,7 +29,7 @@ newImage('assets/well.png', '500', '425');
 
 const newItem=(url, left, bottom) => {
 
-    let newItem = document.createElement('img')
+let newItem = document.createElement('img')
 newItem.src = url
 newItem.style.position = 'fixed'
 newItem.style.left = left + 'px'
@@ -42,18 +42,21 @@ return newItem;
 
 
 
-
+const items = []
 // assets/sword.png placed 500px from the left and 405px from the bottom.
-newItem('assets/sword.png', '500', '405')
+items.push(newItem('assets/sword.png', '500', '405'))
+
 //assets/shield.png (165px from the left, 185px from the bottom)
-//azat there is a typo for the shield.png
-newItem ('assets/sheild.png', '165','185')
+items.push (newItem ('assets/sheild.png', '165','185'))
+
 //assets/staff.png (600px from the left, 100px from the bottom)
-newItem('assets/staff.png', '600', '100')
+items.push (newItem('assets/staff.png', '600', '100'))
 
-newItem.addEventListener('click', function() {
-    newItem.remove()})
-
+items.forEach(img =>{ 
+    img.addEventListener('dblclick', function() {
+        img.remove()
+    })
+})
 /*
 let sword = document.createElement('img')
 sword.src = 'assets/sword.png'
